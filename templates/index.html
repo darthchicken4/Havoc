@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   {{ title }}
+{% endblock %}
+
+{% block main %}
+    <body >
+        <!--Header-->
+        <header class="mb-1">
+            <h2>Your Recent Posts</h2>
+        </header>
+        <!--List of posts-->
+        {% for post in posts %}
+
+            <li class='list w-50' style='list-style-type: none; margin: auto; text-align: left;'>
+                <hr>
+                <h6><a # href="/thread/{{ post.thread_id }}">Thread #{{ post.thread_id }}</a> </h6>
+
+                <span class = 'user' >{{ post.user }},</span>
+                <span class = 'date' >{{ post.created }}</span>
+                <br>
+                <p> {{ post.content }}</p>
+              </li>
+            {% endfor %}
+            </body>
+{% endblock %}

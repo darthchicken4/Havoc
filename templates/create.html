@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Create a Thread
+{% endblock %}
+
+{% block main %}
+    <form action="/create" method="post">
+        <!--Header-->
+        <header class="mb-1">
+            <h2>Create an Thread</h2>
+            <div style="height: 60px;"></div>
+        </header>
+        <div class="mb-3">
+            <label  class="form-label">Title</label>
+            <input class="form-control mx-auto w-25" style="text-align: left;" name = "title" placeholder="Example: Dumb Cat Images">
+        </div>
+        <div class="mb-3">
+            <label for="textarea" class="form-label">Description</label>
+            <textarea class="form-control mx-auto w-25" name = "text" id="textarea" rows="6"></textarea>
+        </div>
+
+
+        <button class="btn btn-primary" type="submit">Create</button>
+        <footer class="mb-5">
+            <div style="height: 60px;"></div>
+            Read <a style ='display:inline-block' href="/guidlines">Community Guidlines</a>
+        </footer>
+    </form>
+{% endblock %}

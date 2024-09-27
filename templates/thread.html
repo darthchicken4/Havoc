@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   {{ title }}
+{% endblock %}
+
+{% block main %}
+    <body >
+        <header class="mb-1">
+            <!--Header-->
+            <h2>{{ title }}</h2>
+            <span style="height: 60px;"></span><span class = "date">{{ creation }}</span>
+        </header>
+        <div class = "w-50" style = "margin: auto; text-align: left;">
+            <hr>
+            <div>{{ text }}</div>
+            <hr>
+            <div style="color: #808080;"> -{{ user }}</div>
+
+        </div>
+        <footer class="mb-5">
+            <div style="height: 60px;"></div>
+            Read <a style ='display:inline-block' href="/guidlines">Community Guidlines</a>
+
+        </footer>
+        <form action="/post" method="post">
+            <div class="mb-3 w-50" style = "margin: auto; text-align: left;">
+                <label  class="form-label mx-auto" style = "text-align: left;">Post a Comment</label>
+                <textarea class="form-control mx-auto " name = "text"  rows="3"></textarea>
+                <input type="hidden" name="thread_id" value="{{ thread_id }}">
+            </div>
+            <button class="btn btn-primary" type="submit">Post</button>
+        </body>
+        {% for post in posts %}
+
+            <li class='list w-50' style='list-style-type: none; margin: auto; text-align: left;'>
+                <hr>
+                <span class = 'user' >{{ post.user }},</span>
+                <span class = 'date' >{{ post.created }}</span>
+                <br>
+                <p> {{ post.content }}</p>
+
+
+
+              </li>
+            {% endfor %}
+            </body>
+{% endblock %}

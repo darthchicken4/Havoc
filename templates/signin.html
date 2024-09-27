@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sign in
+{% endblock %}
+
+{% block main %}
+    <form action="/signin" method="post">
+        <header class="mb-1">
+            <!--Header-->
+            <h2>Sign in</h2>
+            <div style="height: 60px;"></div>
+        </header>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="password" placeholder="Password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Sign in</button>
+
+        <footer class="mb-5">
+            <div style="height: 60px;"></div>
+            New here? <a style ='display:inline-block' href="/register">Register Now</a>
+        </footer>
+    </form>
+{% endblock %}

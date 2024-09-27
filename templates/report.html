@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Create a Thread
+{% endblock %}
+
+{% block main %}
+    <form action="/report" method="post">
+        <header class="mb-1">
+            <!--Header-->
+            <h2>Report Misconduct</h2>
+            <div style="height: 60px;"></div>
+        </header>
+        <div class="mb-3">
+            <label  class="form-label">Subject</label>
+            <input class="form-control mx-auto w-25" style="text-align: left;" name = "subject" placeholder="Enter report or feedback here">
+        </div>
+        <div class="mb-3">
+            <label for="textarea" class="form-label">Description</label>
+            <textarea class="form-control mx-auto w-25" name = "desc" placeholder="Please describe your issue. Including all the information about the issue can help us solve the problem." id="textarea" rows="6"></textarea>
+        </div>
+
+
+        <button class="btn btn-primary" type="submit">Submit</button>
+        <footer class="mb-5">
+            <div style="height: 60px;"></div>
+            Read <a style ='display:inline-block' href="/guidlines">Community Guidlines</a>
+        </footer>
+    </form>
+{% endblock %}

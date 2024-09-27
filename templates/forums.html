@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Threads
+{% endblock %}
+
+{% block main %}
+    <!--Header-->
+    <header class="mb-1">
+        <h2> Browse Threads </h2>
+
+    </header>
+    <!--List of threads-->
+    <div class = 'scrollmenu'>
+        <ul class="mx-auto w-50">
+            {% for thread in threads %}
+            <hr>
+            <li class='list' style='display: flex; justify-content: space-between;'>
+
+                <a style="text-decoration: none;" href="/thread/{{ thread.id }}">{{ thread.title }}</a>
+                <span>{{ thread.formatted_created }}</span>
+              </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
