@@ -1,0 +1,30 @@
+/* Size for brand */
+nav .navbar-brand
+{
+    font-size: xx-large;
+
+}
+
+/* Colors for brand */
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+.scrollmenu {
+    height:500px;
+    overflow: auto;
+
+}
+.list {
+    list-style-type: none;
+
+}
+.user {
+    font-weight: bold;
+}
+.date {
+    color: #808080;
+}
+body {
+    background-color: rgb(255, 222, 222);
+}
